@@ -10,7 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        Home()
+        TabView {
+            boardTestView()
+                .tabItem {
+                    Image(systemName: "bubble.left.and.bubble.right")
+                }
+            Home()
+                .tabItem {
+                    Image(systemName: "calendar")
+                }
+            myPageTestView()
+                .tabItem {
+                    Image(systemName: "person")
+            }
+        }
+        .accentColor(Color("MainColor"))
     }
 }
 
