@@ -18,6 +18,8 @@
 		A0F1CDCD2B66107E00F8F327 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDCC2B66107E00F8F327 /* Home.swift */; };
 		A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */; };
 		A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD02B66111400F8F327 /* DateValue.swift */; };
+		A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */; };
+		A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD72B667DBB00F8F327 /* boardTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A0F1CDD02B66111400F8F327 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		A0F1CDD22B66123C00F8F327 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageTestView.swift; sourceTree = "<group>"; };
+		A0F1CDD72B667DBB00F8F327 /* boardTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 			children = (
 				A0F1CDC92B66104600F8F327 /* Welcome */,
 				A0F1CDC82B66102B00F8F327 /* Calendar */,
+				A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */,
+				A0F1CDD72B667DBB00F8F327 /* boardTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +310,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */,
+				A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */,
+				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
 				A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */,
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,
 				A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */,
