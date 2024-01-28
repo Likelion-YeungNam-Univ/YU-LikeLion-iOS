@@ -13,7 +13,7 @@ struct WelcomeView: View {
         VStack {
             Spacer()
             VStack {
-                Image("Logo")
+                Image("LikeLionLogo")
                     .frame(width: 360.0, height: 60)
                 
                 Text("Possibility to Reality")
