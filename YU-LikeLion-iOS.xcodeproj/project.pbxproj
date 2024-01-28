@@ -14,6 +14,10 @@
 		A0F1CDAE2B660ACA00F8F327 /* YU_LikeLion_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDAD2B660ACA00F8F327 /* YU_LikeLion_iOSTests.swift */; };
 		A0F1CDB82B660ACA00F8F327 /* YU_LikeLion_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDB72B660ACA00F8F327 /* YU_LikeLion_iOSUITests.swift */; };
 		A0F1CDBA2B660ACA00F8F327 /* YU_LikeLion_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDB92B660ACA00F8F327 /* YU_LikeLion_iOSUITestsLaunchTests.swift */; };
+		A0F1CDCB2B66106E00F8F327 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDCA2B66106E00F8F327 /* CalendarView.swift */; };
+		A0F1CDCD2B66107E00F8F327 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDCC2B66107E00F8F327 /* Home.swift */; };
+		A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */; };
+		A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD02B66111400F8F327 /* DateValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,11 @@
 		A0F1CDB32B660ACA00F8F327 /* YU-LikeLion-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YU-LikeLion-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1CDB72B660ACA00F8F327 /* YU_LikeLion_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSUITests.swift; sourceTree = "<group>"; };
 		A0F1CDB92B660ACA00F8F327 /* YU_LikeLion_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0F1CDCA2B66106E00F8F327 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A0F1CDCC2B66107E00F8F327 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A0F1CDD02B66111400F8F327 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		A0F1CDD22B66123C00F8F327 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,7 @@
 		A0F1CD902B660AC500F8F327 = {
 			isa = PBXGroup;
 			children = (
+				A0F1CDD22B66123C00F8F327 /* README.md */,
 				A0F1CD9B2B660AC500F8F327 /* YU-LikeLion-iOS */,
 				A0F1CDAC2B660ACA00F8F327 /* YU-LikeLion-iOSTests */,
 				A0F1CDB62B660ACA00F8F327 /* YU-LikeLion-iOSUITests */,
@@ -94,6 +104,8 @@
 		A0F1CD9B2B660AC500F8F327 /* YU-LikeLion-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A0F1CDC72B66101A00F8F327 /* View */,
+				A0F1CDC62B66100F00F8F327 /* Model */,
 				A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */,
 				A0F1CD9E2B660AC500F8F327 /* ContentView.swift */,
 				A0F1CDA02B660AC900F8F327 /* Assets.xcassets */,
@@ -125,6 +137,40 @@
 				A0F1CDB92B660ACA00F8F327 /* YU_LikeLion_iOSUITestsLaunchTests.swift */,
 			);
 			path = "YU-LikeLion-iOSUITests";
+			sourceTree = "<group>";
+		};
+		A0F1CDC62B66100F00F8F327 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1CDD02B66111400F8F327 /* DateValue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0F1CDC72B66101A00F8F327 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1CDC92B66104600F8F327 /* Welcome */,
+				A0F1CDC82B66102B00F8F327 /* Calendar */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0F1CDC82B66102B00F8F327 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1CDCA2B66106E00F8F327 /* CalendarView.swift */,
+				A0F1CDCC2B66107E00F8F327 /* Home.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A0F1CDC92B66104600F8F327 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */,
 				A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */,
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,
+				A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */,
+				A0F1CDCD2B66107E00F8F327 /* Home.swift in Sources */,
+				A0F1CDCB2B66106E00F8F327 /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
