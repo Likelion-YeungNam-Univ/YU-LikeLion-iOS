@@ -20,6 +20,8 @@
 		A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD02B66111400F8F327 /* DateValue.swift */; };
 		A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */; };
 		A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CDD72B667DBB00F8F327 /* boardTestView.swift */; };
+		D81F2EAB2B677E26007F1BAE /* MainBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F2EAA2B677E26007F1BAE /* MainBoardView.swift */; };
+		D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F2EAC2B678B6D007F1BAE /* CreateBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A0F1CDD22B66123C00F8F327 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageTestView.swift; sourceTree = "<group>"; };
 		A0F1CDD72B667DBB00F8F327 /* boardTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardTestView.swift; sourceTree = "<group>"; };
+		D81F2EAA2B677E26007F1BAE /* MainBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBoardView.swift; sourceTree = "<group>"; };
+		D81F2EAC2B678B6D007F1BAE /* CreateBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		A0F1CDC72B66101A00F8F327 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D81F2EA92B677DF9007F1BAE /* Board */,
 				A0F1CDC92B66104600F8F327 /* Welcome */,
 				A0F1CDC82B66102B00F8F327 /* Calendar */,
 				A0F1CDD52B667D8300F8F327 /* myPageTestView.swift */,
@@ -177,6 +182,15 @@
 				A0F1CDCE2B66109300F8F327 /* WelcomeView.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		D81F2EA92B677DF9007F1BAE /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				D81F2EAA2B677E26007F1BAE /* MainBoardView.swift */,
+				D81F2EAC2B678B6D007F1BAE /* CreateBoardView.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +326,11 @@
 				A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */,
 				A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */,
 				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
+				D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */,
 				A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */,
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,
 				A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */,
+				D81F2EAB2B677E26007F1BAE /* MainBoardView.swift in Sources */,
 				A0F1CDCD2B66107E00F8F327 /* Home.swift in Sources */,
 				A0F1CDCB2B66106E00F8F327 /* CalendarView.swift in Sources */,
 			);
