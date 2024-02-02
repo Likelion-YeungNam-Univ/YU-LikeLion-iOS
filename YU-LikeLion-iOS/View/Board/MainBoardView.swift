@@ -14,41 +14,56 @@ struct MainBoardView: View {
     ]
     
     var body: some View {
-        
-        // Title/20px/140%/bold
-        Text("게시판")
-          .font(
-            Font.custom("Pretendard", size: 20)
-              .weight(.bold)
-          )
-//          .foregroundColor(Color(red: 0.12, green: 0.12, blue: 0.12))
-        
-        NavigationView {
-            
-            
-            List {
-                ForEach(boards, id: \.self) { board in
-                    Text(board.capitalized)
-                    
-                }
-                //게시글 삭제 할 때
-                .onDelete(perform: { indexSet in
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-                })
-            }
-            .navigationTitle("게시판")
-            .navigationBarItems(
-                trailing: NavigationLink(destination: CreateBoardView()) {
-                    Text("글 작성")
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                
-                
-            )
-        }
-        
-        
+        ZStack {
 
+            VStack {
+                
+                NavigationView {
+                    
+                    
+                    List {
+                        
+                        NavigationLink(destination: DetailBoardView()) {
+                            Text("게시글 1")
+                        }
+                        
+                        NavigationLink(destination: DetailBoardView()) {
+                            Text("게시글 2")
+                        }
+                        
+                        NavigationLink(destination: DetailBoardView()) {
+                            Text("게시글 3")
+                        }
+//                        ForEach(boards, id: \.self) { board in
+//                            Text(board.capitalized)
+//                            
+//                        }
+//                        //게시글 삭제 할 때
+//                        .onDelete(perform: { indexSet in
+//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+//                        })
+                    }
+                    .listStyle(PlainListStyle())
+                    .navigationTitle("게시판")
+                    .navigationBarItems(
+                        trailing: NavigationLink(destination: CreateBoardView()) {
+                            Text("글 작성")
+                        }
+                            .navigationBarTitleDisplayMode(.inline)
+                        
+                        
+                    )
+                }
+
+                
+            }
+            
+            
+            
+            
+        }
+        .frame(width: 393, height: 852)
+        .background(Color(red: 0.98, green: 0.98, blue: 0.98))
     }
 }
 
