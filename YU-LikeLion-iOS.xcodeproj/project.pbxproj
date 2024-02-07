@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */; };
+		A0EDC4122B735D1000B4AB1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A0EDC4112B735D1000B4AB1E /* FSCalendar */; };
 		A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */; };
 		A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CD9E2B660AC500F8F327 /* ContentView.swift */; };
 		A0F1CDA12B660AC900F8F327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F1CDA02B660AC900F8F327 /* Assets.xcassets */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		A0F1CD992B660AC500F8F327 /* YU-LikeLion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YU-LikeLion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSApp.swift; sourceTree = "<group>"; };
 		A0F1CD9E2B660AC500F8F327 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EDC4122B735D1000B4AB1E /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0EDC40D2B735A2600B4AB1E /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */,
+			);
+			path = FSCalendar;
+			sourceTree = "<group>";
+		};
 		A0F1CD902B660AC500F8F327 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 		A0F1CDC72B66101A00F8F327 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A0EDC40D2B735A2600B4AB1E /* FSCalendar */,
 				D81F2EA92B677DF9007F1BAE /* Board */,
 				A0F1CDC92B66104600F8F327 /* Welcome */,
 				A0F1CDC82B66102B00F8F327 /* Calendar */,
@@ -212,6 +225,9 @@
 			dependencies = (
 			);
 			name = "YU-LikeLion-iOS";
+			packageProductDependencies = (
+				A0EDC4112B735D1000B4AB1E /* FSCalendar */,
+			);
 			productName = "YU-LikeLion-iOS";
 			productReference = A0F1CD992B660AC500F8F327 /* YU-LikeLion-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +300,9 @@
 				Base,
 			);
 			mainGroup = A0F1CD902B660AC500F8F327;
+			packageReferences = (
+				A0EDC4102B735D1000B4AB1E /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = A0F1CD9A2B660AC500F8F327 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */,
+				A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */,
 				A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */,
 				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
 				D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */,
@@ -666,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0EDC4102B735D1000B4AB1E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0EDC4112B735D1000B4AB1E /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0EDC4102B735D1000B4AB1E /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A0F1CD912B660AC500F8F327 /* Project object */;
 }
