@@ -109,11 +109,13 @@ struct DetailBoardView: View {
                 })
                 
             }
+            .navigationBarTitleDisplayMode(.inline)
             
             
 
         }
         .background(Color(red: 0.98, green: 0.98, blue: 0.98))
+        .navigationBarTitleDisplayMode(.inline)
         
         
     }

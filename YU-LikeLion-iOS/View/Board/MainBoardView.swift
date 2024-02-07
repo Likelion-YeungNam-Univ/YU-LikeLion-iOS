@@ -9,58 +9,39 @@ import SwiftUI
 
 struct MainBoardView: View {
     
-    @State var boards: [String] = [
-        "first", "second", "third"
-    ]
+    @State private var showing = false
+    @State private var boardItems: [Board] = []
     
     var body: some View {
         ZStack {
-
             VStack {
-                
                 NavigationView {
-                    
-                    
+
                     List {
-                        
-                        NavigationLink(destination: DetailBoardView()) {
-                            Text("게시글 1")
+                        ForEach(boardItems) { item in
+                            Text(item.title)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.leading)
                         }
-                        
-                        NavigationLink(destination: DetailBoardView()) {
-                            Text("게시글 2")
-                        }
-                        
-                        NavigationLink(destination: DetailBoardView()) {
-                            Text("게시글 3")
-                        }
-//                        ForEach(boards, id: \.self) { board in
-//                            Text(board.capitalized)
-//                            
-//                        }
-//                        //게시글 삭제 할 때
-//                        .onDelete(perform: { indexSet in
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-//                        })
                     }
                     .listStyle(PlainListStyle())
-                    .navigationTitle("게시판")
-                    .navigationBarItems(
-                        trailing: NavigationLink(destination: CreateBoardView()) {
-                            Text("글 작성")
-                        }
-                            .navigationBarTitleDisplayMode(.inline)
-                        
-                        
-                    )
+                    .navigationBarTitle("게시판")
+                    .navigationBarItems(trailing: 
+                                            
+    
+                    Button(action: {
+                        self.showing = true
+                    }) {
+                        Image(systemName: "pencil.line")
+                            .foregroundColor(Color("MainColor"))
+                    })
+                    .sheet(isPresented: $showing, content: {
+                        CreateBoardView(items: $boardItems, showing: .constant(true))
+                    })
                 }
-
-                
+                .navigationBarTitleDisplayMode(.inline)
             }
-            
-            
-            
-            
         }
         .frame(width: 393, height: 852)
         .background(Color(red: 0.98, green: 0.98, blue: 0.98))
