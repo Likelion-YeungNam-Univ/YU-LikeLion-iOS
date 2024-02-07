@@ -5,13 +5,24 @@
 //  Created by 아우신얀 on 1/29/24.
 //
 
+
 import SwiftUI
 
+struct Board: Identifiable {
+    let id: UUID = UUID()
+    var title : String
+    var subTitle : String
+}
+
 struct CreateBoardView: View {
+    @Environment(\.presentationMode) var presentationMode
+
     
     @State var title = ""
     @State var content = ""
-    @State private var showing = false
+    @State private var showingPopUp = false
+    @Binding var items: [Board]
+    @Binding var showing: Bool
     
     var body: some View {
         VStack {
@@ -23,17 +34,11 @@ struct CreateBoardView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .multilineTextAlignment(.center)
         
-//                Button(action: {
-//                    
-//                }, label: {
-//                    Text("완료")
-//                })
-//                .alert(isPresented: $showing) {
-//                    Alert(title: Text("완료"), message: Text("글이 등록되었습니다!"))
-//                }
                 Button("완료") {
-                    print("글쓰기 완료")
-                    showing = true
+                    showingPopUp = true
+                    let newItem = Board(title: title, subTitle: content)
+                    self.items.append(newItem)
+                    self.presentationMode.wrappedValue.dismiss()
                 }
                 .foregroundColor(.white)
                 .padding(.leading, 11)
@@ -42,7 +47,7 @@ struct CreateBoardView: View {
                 .background(Color(red: 1, green: 0.47, blue: 0.06))
 
                 .cornerRadius(16)
-                .alert(isPresented: $showing) {
+                .alert(isPresented: $showingPopUp) {
                     Alert(title: Text("완료"), message: Text("글이 등록되었습니다!"))
                 } 
             }
@@ -67,6 +72,6 @@ struct CreateBoardView: View {
 }
 
 #Preview {
-    CreateBoardView()
+    CreateBoardView(items: .constant([]), showing: .constant(true))
 }
 
