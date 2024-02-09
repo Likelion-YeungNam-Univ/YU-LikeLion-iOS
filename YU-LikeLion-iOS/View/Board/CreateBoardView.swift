@@ -65,8 +65,7 @@ struct CreateBoardView: View {
         }
         
         Spacer()
-        
-            
+
     }
         
 }
