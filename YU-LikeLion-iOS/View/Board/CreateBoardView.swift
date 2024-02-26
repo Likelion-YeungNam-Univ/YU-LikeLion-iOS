@@ -55,7 +55,6 @@ struct CreateBoardView: View {
             .navigationBarTitleDisplayMode(.inline)
             
             
-            
             TextField("제목", text: $title)
                 .padding()
                 .font(.title3)
