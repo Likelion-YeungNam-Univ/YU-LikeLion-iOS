@@ -55,11 +55,11 @@ struct CreateBoardView: View {
             .navigationBarTitleDisplayMode(.inline)
             
             
-            TextField("제목", text: $title)
+            TextField("제목", text: $title, axis: .vertical)
                 .padding()
                 .font(.title3)
                 
-            TextField("내용을 입력하세요.", text: $content)
+            TextField("내용을 입력하세요.", text: $content, axis: .vertical)
                 .padding()
         }
         
