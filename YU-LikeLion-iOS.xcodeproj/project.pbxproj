@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0CA09F82B8C614500896F92 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA09F72B8C614500896F92 /* Schedule.swift */; };
 		A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */; };
 		A0EDC4122B735D1000B4AB1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A0EDC4112B735D1000B4AB1E /* FSCalendar */; };
 		A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0CA09F72B8C614500896F92 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		A0F1CD992B660AC500F8F327 /* YU-LikeLion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YU-LikeLion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSApp.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F1CDD02B66111400F8F327 /* DateValue.swift */,
+				A0CA09F72B8C614500896F92 /* Schedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				A0F1CDCF2B66109300F8F327 /* WelcomeView.swift in Sources */,
 				A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */,
 				D81F2EED2B737D94007F1BAE /* MyPageView.swift in Sources */,
+				A0CA09F82B8C614500896F92 /* Schedule.swift in Sources */,
 				A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */,
 				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
 				D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */,

@@ -16,9 +16,9 @@ struct Home: View {
         ScrollView(.vertical, showsIndicators: false) {
             
             VStack(spacing: 20) {
-                
-                CalenderView(currentDate: $currentDate)
+                CalendarView(currentDate: $currentDate)
             }
+            .padding(.vertical)
         }
     }
 }

@@ -16,7 +16,7 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "bubble.left.and.bubble.right")
                     }
-                FSCalendarView()
+                Home()
                     .tabItem {
                         Image(systemName: "calendar")
                     }
