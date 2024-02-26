@@ -17,9 +17,9 @@ struct FSCalendarView: View {
     var body: some View {
         ZStack (alignment: .top) {
             
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.gray)
-                .frame(width: 390, height: 700)
+//            RoundedRectangle(cornerRadius: 20)
+//                .fill(Color.white)
+//                .frame(width: 390, height: 700)
             
             VStack {
                 HStack {
@@ -48,7 +48,7 @@ struct FSCalendarView: View {
                     .padding()
                 }
                 CalendarViewRepresentable(selectedDate: $selectedDate)
-                    .frame(width:360, height: 600)
+                    .frame(width:360, height: 400)
                 
             }
             
@@ -84,6 +84,9 @@ struct CalendarViewRepresentable: UIViewRepresentable {
         calendar.appearance.weekdayTextColor = .black
         calendar.appearance.titleWeekendColor = .red
         calendar.headerHeight = 0
+        calendar.placeholderType = .fillHeadTail
+//        calendar.appearance.todayColor = UIColor(red: 1, green: 0.47, blue: 0.06)
+       
         
         calendar.delegate = context.coordinator
         calendar.dataSource = context.coordinator

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CalenderView: View {
+struct CalendarView: View {
     
     @Binding var currentDate: Date
     
@@ -17,11 +17,6 @@ struct CalenderView: View {
     var body: some View {
         
         VStack {
-            ZStack (alignment: .top){
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.gray)
-                    .frame(width: 390, height: 580)
                 
                 VStack {
                     
@@ -48,7 +43,7 @@ struct CalenderView: View {
                                 .foregroundColor(.black)
                         }
                         
-                        Button {
+                        Button { 
                             withAnimation {
                                 currentMonth += 1
                             }
@@ -75,10 +70,56 @@ struct CalenderView: View {
                         ForEach(extractDate()) { value in
                             
                             CardView(value: value)
+                                .background(
+                                    Capsule()
+                                        .fill(Color.orange)
+                                        .padding(.horizontal, 8)
+                                        .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
+                                )
+                                .onTapGesture {
+                                    currentDate = value.date
+                                }
+                        }
+                    }
+                    
+                    VStack (spacing: 20){
+                        Text("Tasks")
+                            .font(.title2.bold())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.vertical, 20)
+                        
+                        if let task = tasks.first(where: { task in
+                            return isSameDay(date1: task.taskDate, date2: currentDate)
+                        }) {
+                            
+                            ForEach (task.task) { task in
+                                
+                                VStack(alignment: .leading, spacing: 10) {
+                                    // for custom time
+                                    Text(task.time
+                                        .addingTimeInterval(CGFloat
+                                            .random(in: 0...5000)),style: .time)
+                                    
+                                    Text(task.title)
+                                        .font(.title2.bold())
+                                }
+                                .padding(.vertical, 10)
+                                .padding(.horizontal)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(
+                                    
+                                    Color(Color.orange)
+                                        .opacity(0.5)
+                                        .cornerRadius(10)
+                                )
+                            }
+                            
+                        } else {
+                            Text("No Task Found")
                         }
                     }
                 }
-            }
+            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
             .onChange(of: currentMonth) { newValue in
@@ -87,7 +128,6 @@ struct CalenderView: View {
                 currentDate = getCurrentMonth()
             }
         }
-        
     }
     
     @ViewBuilder
@@ -96,14 +136,45 @@ struct CalenderView: View {
         VStack {
             
             if value.day != -1 {
-                Text("\(value.day)")
-                    .font(.title3.bold())
-                    .foregroundColor(getTextColor(for: value.date))
+                 
+                if let task = tasks.first(where: { task in
+                    
+                    return isSameDay(date1: task.taskDate, date2: value.date)
+                }) {
+                    Text("\(value.day)")
+                        .font(.title3.bold())
+                        .foregroundStyle(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : .primary)
+                        .frame(maxWidth: .infinity)
+                    
+                    Spacer()
+                    
+                    Circle()
+                        .fill(isSameDay(date1: task.taskDate, date2: currentDate) ? Color.white : Color.orange )
+                        .frame(width: 8, height: 8)
+                        
+                
+                } else {
+                    
+                    Text("\(value.day)")
+                        .font(.title3.bold())
+                        .foregroundStyle(isSameDay(date1: value.date, date2: currentDate) ?  .white : .primary)
+                        .frame(maxWidth: .infinity)
+                    
+                    Spacer()
+                }
             }
         }
-        .padding(.vertical,8)
+        .padding(.vertical,9 )
         .frame(height: 60, alignment: .top)
     }
+    
+    // 날짜 확인
+    func isSameDay(date1: Date, date2: Date)->Bool {
+        let calendar = Calendar.current
+        
+        return calendar.isDate(date1, inSameDayAs: date2)
+    }
+     
     
     func getTextColor(for date: Date) -> Color {
         let calendar = Calendar.current
@@ -124,7 +195,7 @@ struct CalenderView: View {
     func extraDate()->[String] {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY MMMM"
+        formatter.dateFormat = "YYYY년 M월"
         
         let date = formatter.string(from: currentDate)
         
