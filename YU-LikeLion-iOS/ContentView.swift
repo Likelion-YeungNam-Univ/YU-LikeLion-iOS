@@ -11,13 +11,12 @@ struct ContentView: View {
 
     var body: some View {
 
-            
             TabView {
                 MainBoardView()
                     .tabItem {
                         Image(systemName: "bubble.left.and.bubble.right")
                     }
-                Home()
+                FSCalendarView()
                     .tabItem {
                         Image(systemName: "calendar")
                     }
