@@ -19,18 +19,21 @@ struct MainBoardView: View {
 
                     List {
                         ForEach(boardItems) { item in
-                            Text(item.title)
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
+                            NavigationLink(destination: DetailBoardView(title: item.title, content: item.subTitle)) {
+                                Text(item.title)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            
                         }
                     }
                     .listStyle(PlainListStyle())
-                    .navigationBarTitle("게시판")
+                    .navigationBarTitle(Text("게시판"), displayMode: .inline)
                     .navigationBarItems(trailing: 
                                             
-    
-                    Button(action: {
+                                            
+                                            Button(action: {
                         self.showing = true
                     }) {
                         Image(systemName: "pencil.line")
