@@ -8,94 +8,110 @@
 import SwiftUI
 
 struct MyPageView: View {
-    @State var showingPhoto = false
-    @State var image : UIImage?
-    
     var body: some View {
-        VStack {
-            ZStack {
-                Rectangle()
-                    .fill(Color.main)
-                    .frame(width: 398, height: 300)
-                
-                Button(action: {
-                    self.showingPhoto.toggle()
-                }, label: {
-                    let selected = image == nil ? Image("Image") : Image(uiImage : image!)
-                    selected
-                        .resizable()
-                        .frame(width: 150, height: 150)
+        ScrollView (showsIndicators: false) {
+            VStack {
+                ZStack {
+                    Rectangle()
+                        .fill(Color("MyPageColor"))
+                        .frame(width: 398, height: 300)
+                    VStack {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "gearshape.fill")
+                                .padding(.leading, 320)
+                                .foregroundStyle(Color.gray)
+                                .font(.system(size:20))
+                        }
                         
-                })
-                .clipShape(Circle())
-                .sheet(isPresented: $showingPhoto) {
-                    UIImagePicker(sourceType: .photoLibrary) { (image) in
-                        self.image = image
+                        Image("Image")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                        Text("홍길동")
+                            .padding()
+                            .font(.system(size: 30, weight: .heavy))
                     }
                 }
                 
-            }
-            
-            VStack {
+                Button {
+                    
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color("MyPageColor"))
+                            .frame(width: 360, height: 50)
+                        HStack {
+                            Text("\(Text("홍길동").foregroundStyle(Color("MainColor")))님의 정보를 설정하기")
+                                .font(.system(size: 20, weight: .heavy))
+                                .foregroundStyle(Color.black)
+                                .padding(.trailing, 100)
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(Color.gray)
+                        }
+                    }
+                }
+                .padding()
                 
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("MyPageColor"), lineWidth: 2)
+                            .frame(width: 360, height: 50)
+                        HStack {
+                            Image("DepartmentIcon")
+                            Text("아직 학과를 입력하지 않았어요.")
+                                .padding(.trailing, 80)
+                        }
+                    }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("MyPageColor"), lineWidth: 2)
+                            .frame(width: 360, height: 50)
+                        HStack {
+                            Image("PartIcon")
+                            Text("아직 학과를 입력하지 않았어요.")
+                                .padding(.trailing, 80)
+                        }
+                    }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("MyPageColor"), lineWidth: 2)
+                            .frame(width: 360, height: 50)
+                        HStack {
+                            
+                            Image("EmailIcon")
+                            Text("아직 학과를 입력하지 않았어요.")
+                                .padding(.trailing, 80)
+                        }
+                    }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("MyPageColor"), lineWidth: 2)
+                            .frame(width: 360, height: 50)
+                        HStack {
+                            
+                            Image("GithubIcon")
+                            Text("아직 학과를 입력하지 않았어요.")
+                                .padding(.trailing, 80)
+                            
+                        }
+                    }
+                }
+                VStack {
+                    Text("내가 쓴 글")
+                        .font(.system(size: 25, weight: .heavy))
+                        .padding()
+                        .padding(.trailing, 250)
+                }
             }
             
+            Spacer()
         }
+        .ignoresSafeArea()
     }
-}
-
-struct UIImagePicker: UIViewControllerRepresentable {
-    
-    typealias UIViewControllerType = UIImagePickerController
-    
-    @Environment(\.presentationMode)
-    private var presentationMode // 해당 뷰컨트롤러의 노출 여부
-    let sourceType: UIImagePickerController.SourceType
-    let imagePicked: (UIImage) -> () // 이미지가 선택됐을때 결과 호출
-    
-
-    
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        
-        let parent: UIImagePicker
-        
-        init(parent: UIImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            
-            if let image = info[.originalImage] as? UIImage {
-                parent.imagePicked(image)
-                parent.presentationMode.wrappedValue.dismiss()
-            }
-            
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-    
-    
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        
-        let picker = UIImagePickerController()
-        
-        picker.delegate = context.coordinator
-        
-        return picker
-        
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        
-    }
-
 }
 
 #Preview {
