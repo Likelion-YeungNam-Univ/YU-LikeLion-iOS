@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0CA09F82B8C614500896F92 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA09F72B8C614500896F92 /* Schedule.swift */; };
+		A0D4899A2B8F167400C21834 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489992B8F167400C21834 /* ImagePickerView.swift */; };
 		A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */; };
 		A0EDC4122B735D1000B4AB1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A0EDC4112B735D1000B4AB1E /* FSCalendar */; };
 		A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		A0CA09F72B8C614500896F92 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		A0D489992B8F167400C21834 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		A0F1CD992B660AC500F8F327 /* YU-LikeLion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YU-LikeLion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSApp.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				D81F2EEC2B737D94007F1BAE /* MyPageView.swift */,
 				D81F2EEE2B737DC8007F1BAE /* ModifyMyPageView.swift */,
+				A0D489992B8F167400C21834 /* ImagePickerView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,
 				A0F1CDD12B66111400F8F327 /* DateValue.swift in Sources */,
 				D81F2EAB2B677E26007F1BAE /* MainBoardView.swift in Sources */,
+				A0D4899A2B8F167400C21834 /* ImagePickerView.swift in Sources */,
 				A0F1CDCD2B66107E00F8F327 /* Home.swift in Sources */,
 				A0F1CDCB2B66106E00F8F327 /* CalendarView.swift in Sources */,
 				D81F2EB12B6D10E5007F1BAE /* DetailBoardView.swift in Sources */,
