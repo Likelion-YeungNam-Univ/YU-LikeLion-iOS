@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0CA09F82B8C614500896F92 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA09F72B8C614500896F92 /* Schedule.swift */; };
 		A0D4899A2B8F167400C21834 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489992B8F167400C21834 /* ImagePickerView.swift */; };
+		A0D489C52B92E34600C21834 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489C42B92E34600C21834 /* User.swift */; };
 		A0EDC40F2B735A4C00B4AB1E /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */; };
 		A0EDC4122B735D1000B4AB1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A0EDC4112B735D1000B4AB1E /* FSCalendar */; };
 		A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		A0CA09F72B8C614500896F92 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A0D489992B8F167400C21834 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		A0D489C42B92E34600C21834 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A0EDC40E2B735A4C00B4AB1E /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		A0F1CD992B660AC500F8F327 /* YU-LikeLion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YU-LikeLion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1CD9C2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YU_LikeLion_iOSApp.swift; sourceTree = "<group>"; };
@@ -102,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0D489C22B92E2EE00C21834 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA09F72B8C614500896F92 /* Schedule.swift */,
+				A0F1CDD02B66111400F8F327 /* DateValue.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A0D489C32B92E30300C21834 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				A0D489C42B92E34600C21834 /* User.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		A0EDC40D2B735A2600B4AB1E /* FSCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,8 +191,8 @@
 		A0F1CDC62B66100F00F8F327 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0F1CDD02B66111400F8F327 /* DateValue.swift */,
-				A0CA09F72B8C614500896F92 /* Schedule.swift */,
+				A0D489C32B92E30300C21834 /* MyPage */,
+				A0D489C22B92E2EE00C21834 /* Calendar */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +391,7 @@
 				A0F1CDD82B667DBB00F8F327 /* boardTestView.swift in Sources */,
 				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
 				D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */,
+				A0D489C52B92E34600C21834 /* User.swift in Sources */,
 				A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */,
 				D81F2EEF2B737DC8007F1BAE /* ModifyMyPageView.swift in Sources */,
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,

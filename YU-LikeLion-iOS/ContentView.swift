@@ -20,7 +20,7 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "calendar")
                     }
-                myPageTestView()
+                MyPageView(user: Binding.constant(User(department: "", part: "", email: "", gitHub: "")))
                     .tabItem {
                         Image(systemName: "person")
                 }
