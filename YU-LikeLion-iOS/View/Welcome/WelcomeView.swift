@@ -19,7 +19,7 @@ struct WelcomeView: View {
                 Text("Possibility to Reality")
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(hue: 0.072, saturation: 0.945, brightness: 0.977)/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color(hue: 0.072, saturation: 0.945, brightness: 0.977))
                 
             }
             Spacer()
