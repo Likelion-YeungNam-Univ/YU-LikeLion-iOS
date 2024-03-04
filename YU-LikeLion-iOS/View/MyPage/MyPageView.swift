@@ -62,7 +62,8 @@ struct MyPageView: View {
                             
                             Image("DepartmentIcon")
                             if user.department.isEmpty {
-                                Text("학과 정보가 없습니다.")
+                                Text(String(user.department))
+                                //print(user.department)
                                     
                             } else {
                                 Text(user.department)
