@@ -65,6 +65,7 @@ struct ModifyMyPageView: View {
                         HStack {
                             Image("DepartmentIcon")
                             TextField("학과를 입력해주세요.", text: $departmentInput)
+                                
                         }
                         .padding(.leading, 30)
                     }
@@ -107,7 +108,6 @@ struct ModifyMyPageView: View {
                 Button("Done") {
                     firstNaviLinkActive = false
                     addUserInformation()
-                    print(user)
                 }
             }
             Spacer()
@@ -117,10 +117,9 @@ struct ModifyMyPageView: View {
         func addUserInformation() {
             let newUser = User(department: departmentInput, part: partInput, email: emailInput, gitHub: gitHubInput)
             user.append(newUser)
+            
             print(user)
         }
-
-        
     }
 
 
