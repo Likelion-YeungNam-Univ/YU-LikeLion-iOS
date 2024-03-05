@@ -8,56 +8,36 @@
 import Foundation
 import SwiftUI
 
-struct UIImagePicker: UIViewControllerRepresentable {
+struct ImagePicker: UIViewControllerRepresentable {
+    @Binding var image: UIImage?
 
-    typealias UIViewControllerType = UIImagePickerController
+    private let controller = UIImagePickerController()
 
-    @Environment(\.presentationMode)
-    private var presentationMode // 해당 뷰컨트롤러의 노출 여부
-    let sourceType: UIImagePickerController.SourceType
-    let imagePicked: (UIImage) -> () // 이미지가 선택됐을때 결과 호출
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(parent: self)
+    }
 
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        let parent: ImagePicker
 
-
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-        let parent: UIImagePicker
-
-        init(parent: UIImagePicker) {
+        init(parent: ImagePicker) {
             self.parent = parent
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
-            if let image = info[.originalImage] as? UIImage {
-                parent.imagePicked(image)
-                parent.presentationMode.wrappedValue.dismiss()
-            }
-
+            parent.image = info[.originalImage] as? UIImage
+            picker.dismiss(animated: true)
         }
 
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.presentationMode.wrappedValue.dismiss()
+            picker.dismiss(animated: true)
         }
     }
 
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-
-
     func makeUIViewController(context: Context) -> UIImagePickerController {
-
-        let picker = UIImagePickerController()
-
-        picker.delegate = context.coordinator
-
-        return picker
-
+        controller.delegate = context.coordinator
+        return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-
-    }
-
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
