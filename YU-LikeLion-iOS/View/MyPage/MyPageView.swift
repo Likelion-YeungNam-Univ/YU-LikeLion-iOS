@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MyPageView: View {
     
-    @Binding var user: User
     @State var firstNaviLinkActive = false
+    @State private var user:User = User(department: "", part: "", email: "", gitHub: "")
+    
+    @Binding var image: UIImage?
     
     var body: some View {
         NavigationView {
@@ -21,11 +24,27 @@ struct MyPageView: View {
                             .fill(Color.white)
                             .frame(width: 398, height: 300)
                         VStack {
-                            
-                            Image("Image")
-                                .resizable()
-                                .frame(width: 130, height: 130)
-                                .clipShape(Circle())
+//                            if let selectedImage = user.image {
+//                                Image(uiImage: selectedImage)
+//                                    .resizable()
+//                                    .frame(width: 130, height: 130)
+//                                    .clipShape(Circle())
+//                            } else {
+//                                Image("Image")
+//                                    .resizable()
+//                                    .frame(width: 130, height: 130)
+//                                    .clipShape(Circle())
+//                            }Image(uiImage: user.image ?? UIImage(named: "Image")!)
+                            if let image = self.image {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 130, height: 130)
+                                    .clipShape(Circle())
+                                
+                            }
+//                                .resizable()
+//                                .frame(width: 130, height: 130)
+//                                .clipShape(Circle())
                             Text("이름")
                                 .padding()
                                 .font(.system(size: 30, weight: .heavy))
@@ -34,7 +53,7 @@ struct MyPageView: View {
                     Button(action: {
                         
                     }) {
-                        NavigationLink(destination: ModifyMyPageView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
+                        NavigationLink(destination: ModifyMyPageView(firstNaviLinkActive: $firstNaviLinkActive, user: $user), isActive: $firstNaviLinkActive) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color("MyPageColor"))
@@ -54,7 +73,7 @@ struct MyPageView: View {
                     .padding()
                 }
                 VStack {
-                    ZStack {
+                    ZStack (alignment: .leading) {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color("MyPageColor"), lineWidth: 2)
                             .frame(width: 360, height: 50)
@@ -62,97 +81,80 @@ struct MyPageView: View {
                             
                             Image("DepartmentIcon")
                             if user.department.isEmpty {
-                                Text("학과 정보가 없습니다.")
-                                    
+                                Text("아직 학과을 입력하지 않았어요.")
                             } else {
                                 Text(user.department)
                             }
                         }
-                        .padding(.trailing, 160)
-                        .onChange(of: user.department) { newValue in
-                            print(newValue)
-                        }
+                    }
+                }
+                ZStack (alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("MyPageColor"), lineWidth: 2)
+                        .frame(width: 360, height: 50)
+                    HStack {
                         
-                    }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("MyPageColor"), lineWidth: 2)
-                            .frame(width: 360, height: 50)
-                        HStack {
-                            
-                            Image("PartIcon")
-                            if user.part.isEmpty {
-                                Text("아직 파트를 입력하지 않았어요.")
-                                    
-                            } else {
-                                Text(user.part)
-                            }
+                        Image("PartIcon")
+                        if user.part.isEmpty {
+                            Text("아직 파트를 입력하지 않았어요.")
+                        } else {
+                            Text(user.part)
                         }
-                        .padding(.trailing, 90)
-                    }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("MyPageColor"), lineWidth: 2)
-                            .frame(width: 360, height: 50)
-                        HStack {
-                            
-                            Image("EmailIcon")
-                            if user.email.isEmpty {
-                                Text("아직 이메일을 입력하지 않았어요.")
-                            } else {
-                                Text(user.email)
-                            }
-                            
-                        }
-                        .padding(.trailing, 70)
-                    }
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("MyPageColor"), lineWidth: 2)
-                            .frame(width: 360, height: 50)
-                        HStack {
-                            
-                            Image("GithubIcon")
-                            if user.email.isEmpty {
-                                Text("아직 깃허브 주소를 입력하지 않았어요.")
-                            } else {
-                                Text(user.email)
-                            }
-                            
-                        }
-                        .padding(.trailing, 40)
                     }
                 }
-                VStack {
-                    Text("내가 쓴 글")
-                        .font(.system(size: 25, weight: .heavy))
-                        .padding()
-                        .padding(.trailing, 250)
-                }
-                .toolbar {
-                    Button {
+                ZStack (alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("MyPageColor"), lineWidth: 2)
+                        .frame(width: 360, height: 50)
+                    HStack {
                         
-                    } label: {
-                        Image(systemName: "gearshape.fill")
-                            .padding(.leading, 320)
-                            .foregroundStyle(Color.gray)
-                            .font(.system(size:15))
+                        Image("EmailIcon")
+                        if user.email.isEmpty {
+                            Text("아직 이메일을 입력하지 않았어요.")
+                        } else {
+                            Text(user.email)
+                        }
                     }
                 }
-                
+                ZStack (alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("MyPageColor"), lineWidth: 2)
+                        .frame(width: 360, height: 50)
+                    HStack {
+                        
+                        Image("GithubIcon")
+                        if user.gitHub.isEmpty {
+                            Text("아직 깃허브 주소를 입력하지 않았어요.")
+                        } else {
+                            Text(user.gitHub)
+                        }
+                    }
+                    .padding(.trailing, 40)
+                }
             }
-            
-            Spacer()
-            
+            VStack {
+                Text("내가 쓴 글")
+                    .font(.system(size: 25, weight: .heavy))
+                    .padding()
+                    .padding(.trailing, 250)
+            }
+            .toolbar {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .padding(.leading, 320)
+                        .foregroundStyle(Color.gray)
+                        .font(.system(size:15))
+                }
+            }
         }
-        .tint(.gray)
+        .tint(.black)
+        Spacer()
     }
-    
 }
 
-
-
 #Preview {
-    MyPageView(user: Binding.constant(User(department: "", part: "", email: "", gitHub: "")))
+    MyPageView(image: .constant(UIImage()))
 }
 
