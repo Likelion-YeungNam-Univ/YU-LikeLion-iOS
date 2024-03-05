@@ -20,7 +20,7 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "calendar")
                     }
-                MyPageView(user: Binding.constant(User(department: "", part: "", email: "", gitHub: "")))
+                MyPageView(image: .constant(UIImage()))
                     .tabItem {
                         Image(systemName: "person")
                 }
