@@ -45,6 +45,7 @@ struct MyPageView: View {
 //                                .resizable()
 //                                .frame(width: 130, height: 130)
 //                                .clipShape(Circle())
+                            Text("지워주세요")
                             Text("이름")
                                 .padding()
                                 .font(.system(size: 30, weight: .heavy))
