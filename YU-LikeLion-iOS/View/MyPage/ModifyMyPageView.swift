@@ -9,14 +9,9 @@ import SwiftUI
 struct ModifyMyPageView: View {
     
     @State private var shouldShowImagePicker = false
-    @State private var image: UIImage?
+    @Binding var image: UIImage?
     
     @Binding var firstNaviLinkActive: Bool
-    //    @State private var user:User = User(department: "", part: "", email: "", gitHub: "")
-    //    @State private var departmentInput = ""
-    //    @State private var partInput = ""
-    //    @State private var emailInput = ""
-    //    @State private var gitHubInput = ""
     @Binding var user: User
     
     var body: some View {
@@ -37,17 +32,8 @@ struct ModifyMyPageView: View {
                                 .resizable()
                                 .frame(width: 130, height: 130)
                                 .clipShape(Circle())
-//                            if let image = self.image {
-//                                Image(uiImage: image)
-//                                    .resizable()
-//                                    .scaledToFill()
-//                                    .frame(width: 300, height: 300)
-//                                    .cornerRadius(25)
-//                            } else {
-//                                Image("Image")
-//                            }
-                            
                         })
+                        
                         .navigationViewStyle(StackNavigationViewStyle())
                         .fullScreenCover(isPresented: $shouldShowImagePicker) {
                             ImagePicker(image: $image)
@@ -110,40 +96,24 @@ struct ModifyMyPageView: View {
                                 TextField("깃허브 주소를 남겨주세요.", text: $user.gitHub)
                             }
                             .padding(.leading, 20)
-                            
-                            
+                           
                         }
                     }
                 }
                 .toolbar {
                     Button("Done") {
                         firstNaviLinkActive = false
-                        
                     }
-                    //            .toolbar {
-                    //                ToolbarItem {
-                    //                    NavigationLink(destination: MyPageView(user: $user)) {
-                    //                        Text("Done")
-                    //                    }
-                    //                }
-                    //            }
                 }
                 Spacer()
                 
             }
         }
-        //        func addUserInformation() {
-        //            let newUser = User(department: departmentInput, part: partInput, email: emailInput, gitHub: gitHubInput)
-        //            user.append(newUser)
-        //
-        //            print(user)
-        //        }
-  
         
     }
 
-#Preview {
-    ModifyMyPageView(firstNaviLinkActive: .constant(true),user: Binding.constant(User(department: "", part: "", email: "", gitHub: "")))
-}
+//#Preview {
+//    ModifyMyPageView(image: $image, firstNaviLinkActive: .constant(true),user: Binding.constant(User(department: "", part: "", email: "", gitHub: "")))
+//}
 
 
