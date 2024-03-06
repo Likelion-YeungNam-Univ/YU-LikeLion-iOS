@@ -34,15 +34,28 @@ struct WelcomeView: View {
 }
 
 struct AppleSigninButton: View {
+    
+    @StateObject private var loginData = LoginViewModel()
+    
     var body: some View {
-        SignInWithAppleButton(
-            onRequest: { request in
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-            },
-            onCompletion: { result in
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+        SignInWithAppleButton { (request) in
+            loginData.nonce = randomNonceString()
+            request.requestedScopes = [.email, .fullName]
+            request.nonce = sha256(loginData.nonce)
+            
+        } onCompletion: { (result) in
+            switch result {
+            case .success(let user):
+                print("success")
+                guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
+                    print("error with firebase")
+                    return
+                }
+                loginData.authenticate(credential: credential)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-        )
+        }
         .frame(width : UIScreen.main.bounds.width * 0.9, height:58)
         .cornerRadius(10)
         //        .padding()
