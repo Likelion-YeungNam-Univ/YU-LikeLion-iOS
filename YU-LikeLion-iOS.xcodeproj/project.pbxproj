@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A056EB7A2B98D4BA00B00215 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A056EB792B98D4BA00B00215 /* LoginViewModel.swift */; };
 		A0CA09F82B8C614500896F92 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA09F72B8C614500896F92 /* Schedule.swift */; };
 		A0D4899A2B8F167400C21834 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489992B8F167400C21834 /* ImagePickerView.swift */; };
 		A0D489C52B92E34600C21834 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489C42B92E34600C21834 /* User.swift */; };
@@ -78,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A056EB792B98D4BA00B00215 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A056EB7B2B98D57E00B00215 /* YU-LikeLion-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "YU-LikeLion-iOS.entitlements"; sourceTree = "<group>"; };
 		A0CA09F72B8C614500896F92 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A0D489992B8F167400C21834 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		A0D489C42B92E34600C21834 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -160,6 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A056EB782B98D49500B00215 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A056EB792B98D4BA00B00215 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A0D489C22B92E2EE00C21834 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +220,8 @@
 		A0F1CD9B2B660AC500F8F327 /* YU-LikeLion-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A056EB7B2B98D57E00B00215 /* YU-LikeLion-iOS.entitlements */,
+				A056EB782B98D49500B00215 /* ViewModel */,
 				A0D489C62B95B25C00C21834 /* GoogleService-Info.plist */,
 				A0F1CDC72B66101A00F8F327 /* View */,
 				A0F1CDC62B66100F00F8F327 /* Model */,
@@ -478,6 +491,7 @@
 				A0F1CDD62B667D8300F8F327 /* myPageTestView.swift in Sources */,
 				D81F2EAD2B678B6D007F1BAE /* CreateBoardView.swift in Sources */,
 				A0D489C52B92E34600C21834 /* User.swift in Sources */,
+				A056EB7A2B98D4BA00B00215 /* LoginViewModel.swift in Sources */,
 				A0F1CD9F2B660AC500F8F327 /* ContentView.swift in Sources */,
 				D81F2EEF2B737DC8007F1BAE /* ModifyMyPageView.swift in Sources */,
 				A0F1CD9D2B660AC500F8F327 /* YU_LikeLion_iOSApp.swift in Sources */,
@@ -647,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "YU-LikeLion-iOS/YU-LikeLion-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YU-LikeLion-iOS/Preview Content\"";
@@ -676,6 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "YU-LikeLion-iOS/YU-LikeLion-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YU-LikeLion-iOS/Preview Content\"";
