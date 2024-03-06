@@ -87,6 +87,7 @@ struct DetailBoardView: View {
             .padding(.horizontal)
             .navigationBarTitleDisplayMode(.inline)
             // HStack {
+            
             ZStack {
                 Rectangle()
                     .foregroundColor(.clear)
@@ -115,6 +116,8 @@ struct DetailBoardView: View {
                 }
                 .padding()
             }
+            
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .toolbar(.hidden, for: .tabBar)

@@ -10,24 +10,41 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-
+        
+        NavigationView {
+            
             TabView {
                 MainBoardView()
                     .tabItem {
-                        Image(systemName: "bubble.left.and.bubble.right")
+                        VStack {
+                            Image(systemName: "bubble.left.and.bubble.right")
+                        }
+                        
                     }
+                    .tag(0)
+                
+                
                 Home()
                     .tabItem {
-                        Image(systemName: "calendar")
+                        VStack {
+                            Image(systemName: "calendar")
+                        }
+                        
                     }
+                    .tag(1)
+                
                 MyPageView()
                     .tabItem {
-                        Image(systemName: "person")
-                }
+                        VStack {
+                            Image(systemName: "person")
+                        }
+                        
+                    }
+                    .tag(2)
             }
             .accentColor(Color("MainColor"))
         }
-    
+    }
 }
 
 #Preview {

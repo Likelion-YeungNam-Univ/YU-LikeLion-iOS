@@ -16,7 +16,7 @@ struct MainBoardView: View {
         ZStack {
             VStack {
                 NavigationView {
-
+                    
                     List {
                         ForEach(boardItems) { item in
                             NavigationLink(destination: DetailBoardView(title: item.title, content: item.subTitle)) {
@@ -30,7 +30,7 @@ struct MainBoardView: View {
                     }
                     .listStyle(PlainListStyle())
                     .navigationBarTitle(Text("게시판"), displayMode: .inline)
-                    .navigationBarItems(trailing: 
+                    .navigationBarItems(trailing:
                                             
                                             
                                             Button(action: {
